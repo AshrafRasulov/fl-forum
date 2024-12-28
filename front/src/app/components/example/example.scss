@@ -1,0 +1,67 @@
+.mat-toolbar.mat-primary {
+  background: var(--primary) !important;
+  color: #fff;
+}
+.btn-example{
+  background: white;
+  color: var(--primary);
+  .mat-icon{
+    position: relative;
+    top: 5px;
+  }
+}
+
+.example-tab-icon{
+  position: relative;
+  left: -4px;
+  top: -2px;
+}
+
+
+.title-example{
+  font-size: 20px;
+  color: gray;
+  font-weight: 500;
+}
+
+.example-card{
+  background: #559560;
+  color: white;
+  border-radius: 5px;
+}
+
+.table{
+  border-collapse: collapse;
+  border: 1px solid gray;
+  tbody{
+    tr{
+      &:hover{
+        background: gray;
+      }
+    }
+  }
+  th{
+    text-align: center;
+    height: 20px;
+    color: #fff;
+    border: 1px solid white;
+    font-size: 14px;
+    background: var(--primary);
+    padding: 1px 5px;
+  }
+  td{
+    cursor: pointer;
+    background: #ffffff;
+    height: 25px;
+    border: 1px solid gray;
+    font-size: 14px;
+    padding: 1px 5px;
+  }
+}
+
+.active-row{
+  td{
+    background: var(--primary);
+    color: white;
+  }
+}

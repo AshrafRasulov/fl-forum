@@ -1,0 +1,14 @@
+spring:
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:oracle:thin:@dragle.uz:1521/pdb1
+    username: ASHEE
+    password: ASHEE
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      connection-timeout: 30000
+      idleTimeout: 30000
+      minimum-idle: 5
+      pool-name: DL_GLOBAL
+      leak-detection-threshold: 600000

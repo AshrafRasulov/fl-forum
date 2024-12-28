@@ -1,0 +1,41 @@
+<div class="d-flex flex-column h-100">
+  <mat-toolbar color="primary" class="d-flex justify-content-between">
+    <span>DL FORUM - Auth</span>
+    <div>
+      <button (click)="navigate('main',true)" matRipple class="btn-article">
+        <mat-icon>article</mat-icon>
+        <span class="px-2">Главная</span>
+      </button>
+      <button (click)="navigate('example', true)" matRipple class="btn-article">
+        <mat-icon>star</mat-icon>
+        <span class="px-2">Example</span>
+      </button>
+    </div>
+  </mat-toolbar>
+  <div class="w-100 user-select-none flex-grow-1 d-flex justify-content-center align-items-center">
+    <div [formGroup]="form" class="auth-card">
+      <h5 class="text-center py-3 title">Авторизация</h5>
+      <div class="px-4">
+        <div class="auth-label">Логин</div>
+        <div class="auth-input" [class.error]="form.get('login')?.touched && form.get('login')?.hasError('required')">
+          <input formControlName="login">
+        </div>
+      </div>
+      <div class="px-4 mb-3">
+        <div class="auth-label">Пароль</div>
+        <div class="auth-input" [class.error]="form.get('password')?.touched &&form.get('password')?.hasError('required')">
+          <input (keydown.enter)="btn.click()" formControlName="password" type="password">
+        </div>
+      </div>
+      <div class="px-4 mb-2">
+        <button #btn [disabled]="form.invalid" (click)="onLogin()" matRipple class="w-100 auth-btn">
+          <mat-icon class="btn-icon">login</mat-icon>
+          Войти
+        </button>
+      </div>
+      <div class="text-center title">
+        <span (click)="onReg()" matTooltip="Перейти" class="reg px-2">Регистрация</span>
+      </div>
+    </div>
+  </div>
+</div>

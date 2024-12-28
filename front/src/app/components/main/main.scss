@@ -1,0 +1,33 @@
+.logo{
+  color: #fff;
+  font-weight: bold;
+}
+.header{
+  background: #0f498e;
+  height: 50px;
+}
+
+.btn-header{
+  background: #fff !important;
+  color: #0f498e;
+  font-weight: 500;
+}
+
+.text-page{
+  font-size: 30px;
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.mat-toolbar.mat-primary {
+  background: var(--primary) !important;
+  color: #fff;
+}
+.btn-example{
+  background: white;
+  color: var(--primary);
+  .mat-icon{
+    position: relative;
+    top: 5px;
+  }
+}
