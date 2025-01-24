@@ -1,6 +1,7 @@
 package com.DL.junior.service.auth;
 
 import com.DL.junior.model.User;
+import com.DL.junior.service.core.DLSql;
 import com.DL.junior.service.jwt.JwtService;
 import com.DL.junior.service.user.SUser;
 import com.DL.junior.service.util.Util;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -24,6 +26,9 @@ public class SAuth {
   private final SUser sUser;
   private final JwtService sJwt;
   private final AuthenticationManager authManager;
+    private final DLSql sql;
+    private final PasswordEncoder encoder;
+
 
   public ResponseEntity<String> authorization(JsonObject data) {
     JsonObject res = new JsonObject();
@@ -39,6 +44,7 @@ public class SAuth {
           obj.addProperty("last_name", user.getLastName());
           obj.addProperty("middle_name", user.getMiddleName());
           obj.addProperty("user_id", user.getUserId());
+          obj.addProperty("is_admin", user.getIsAdmin());
           obj.add("roles", roles);
           generateToken(res, user);
           res.add("user",obj);
@@ -55,6 +61,7 @@ public class SAuth {
   public void authenticate(String login, String password) throws Exception {
     try {
       authManager.authenticate(new UsernamePasswordAuthenticationToken(login,password));
+      //butta ikita danniy yotadimi login va password shifrovkas
     } catch (Exception e) {
       throw new Exception(e);
     }
@@ -64,5 +71,18 @@ public class SAuth {
     res.addProperty("token", sJwt.generateToken(user));
     Util.successMsg(res);
   }
+
+    public ResponseEntity<String> register(JsonObject data) {
+        var res = new JsonObject();
+        try {
+            if (data.has("password"))
+                data.addProperty("encrypted_password", encoder.encode(data.get("password").getAsString()));
+            sql.callProcedure("Core_User.Register", data);
+            Util.successMsg(res);
+        } catch (Exception e) {
+            Util.errorMsg(res, e.getMessage());
+        }
+        return ResponseEntity.ok(res.toString());
+    }
 
 }

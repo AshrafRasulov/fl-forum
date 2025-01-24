@@ -1,0 +1,55 @@
+<h1 style="text-align: center; color: darkred;">Создать пост</h1>
+<div [formGroup]="postForm" class="form" style="width: 80%">
+
+  <mat-form-field appearance="outline" class="fill-container w-100" style="margin-top: 10px;">
+    <mat-label>Заголовок</mat-label>
+    <input matInput maxlength="255"
+           formControlName="title">
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Содержание</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              formControlName="content"
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Категория</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of (categories$ | async)" [value]="category.id">
+        {{ category.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="d-flex justify-content-center pt-4">
+  <button mat-raised-button color="primary" class="btn-example mr-2" (click)="submit()">Добавить</button>
+  <button mat-stroked-button color="primary" class="btn-example mr-2" [mat-dialog-close]="false">Закрыть</button>
+</div>
+
+<style>
+  .form {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 10px 5px;
+  }
+
+
+
+  .form input {
+    margin-top: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+  }
+
+</style>

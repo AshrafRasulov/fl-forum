@@ -23,6 +23,7 @@ public class PostController {
     public ResponseEntity<String> getPosts(@RequestBody String data){
         return postService.getPosts(JsonParser.toJsonObject(data));
     }
+
     @PostMapping("get_post")
     public ResponseEntity<String> getPost(@RequestBody String data){
         return postService.getPost(JsonParser.toJsonObject(data));
@@ -31,6 +32,11 @@ public class PostController {
     @PostMapping(value = "delete")
     public ResponseEntity<String> delete(HttpServletRequest req, @RequestBody String data){
         return postService.delete(req, JsonParser.toJsonObject(data));
+    }
+
+    @PostMapping(value = "set_post_status")
+    public ResponseEntity<String> setPostStatus(HttpServletRequest req, @RequestBody String data){
+        return postService.setPostStatus(req, JsonParser.toJsonObject(data));
     }
 
 }

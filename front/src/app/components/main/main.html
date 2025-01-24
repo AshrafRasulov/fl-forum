@@ -1,17 +1,4 @@
 <div class="w-100 h-100 flex-column d-flex">
-  <mat-toolbar class="header user-select-none d-flex justify-content-between px-2">
-    <span class="logo  d-flex align-items-center">DL FORUM - Main Page</span>
-    <div class="d-flex align-items-center">
-      <ng-container *ngIf="user.user_id > 0; else el">
-        <mat-icon class="text-white">person</mat-icon>
-        <span class="text-white px-1">{{user.getShortFio()}}</span>
-        <mat-icon (click)="navigate('auth')" matTooltip="Выйти" class="text-white hand ml-3">logout</mat-icon>
-      </ng-container>
-      <ng-template #el>
-        <button (click)="navigate('auth')" class="btn-header">Авторизация</button>
-      </ng-template>
-    </div>
-  </mat-toolbar>
   <div class="w-100 flex-grow-1 d-flex justify-content-center align-items-center">
     <button *ngIf="user.user_id <= 0; else no_auth" (click)="navigate('auth')" mat-flat-button color="primary">Авторизация</button>
     <ng-template #no_auth>

@@ -1,0 +1,127 @@
+<div class="card card-style1 border-0">
+  <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+    <div class="row align-items-center" *ngIf="user$ | async as user">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="assets/img/user_img.png" alt="..." class="">
+      </div>
+      <div class="col-lg-6 px-xl-10">
+        <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+          <h3 class="h2 text-white mb-0">{{ user.last_name }} {{ user.first_name }}</h3>
+          <span class="text-primary">{{user.login}}</span>
+        </div>
+        <ul class="list-unstyled mb-1-9">
+          <li class="mb-2 mb-xl-3 display-28">
+            <span class="display-26 text-secondary me-2 font-weight-600">Количество комментов:
+            </span> {{ user.message_count }}
+          </li>
+          <li class="mb-2 mb-xl-3 display-28">
+            <span class="display-26 text-secondary me-2 font-weight-600">Количество постов:
+            </span> {{ user.post_count }}
+          </li>
+          <li class="mb-2 mb-xl-3 display-28">
+            <span class="display-26 text-secondary me-2 font-weight-600">Дата:
+            </span> {{ user.cr_on.slice(0, -5) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card-link d-flex justify-content-center">
+    <button type="button" class="btn btn-danger mb-4" data-bs-dismiss="modal" mat-dialog-close>
+      Закрыть
+    </button>
+  </div>
+</div>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+  }
+
+  section {
+    padding: 120px 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  .card-body img{
+    width: 315px;
+    height: 315px;
+  }
+
+  .text-primary {
+    color: #ceaa4d !important;
+  }
+  .text-secondary {
+    color: #15395A !important;
+  }
+  .font-weight-600 {
+    font-weight: 600;
+  }
+  .display-26 {
+    font-size: 1.3rem;
+  }
+
+  @media screen and (min-width: 992px){
+    .p-lg-7 {
+      padding: 4rem;
+    }
+  }
+  @media screen and (min-width: 768px){
+    .p-md-6 {
+      padding: 3.5rem;
+    }
+  }
+  @media screen and (min-width: 576px){
+    .p-sm-2-3 {
+      padding: 2.3rem;
+    }
+  }
+  .p-1-9 {
+    padding: 1.9rem;
+  }
+
+  .bg-secondary {
+    background: #15395A !important;
+  }
+  @media screen and (min-width: 576px){
+   .px-sm-6 {
+      padding-right: 3.5rem;
+    }
+  }
+  @media screen and (min-width: 576px){
+    .px-sm-6 {
+      padding-left: 3.5rem;
+    }
+  }
+  .px-1-9 {
+    padding-right: 1.9rem;
+  }
+  .px-1-9 {
+    padding-left: 1.9rem;
+  }
+  .py-1-9 {
+    padding-bottom: 1.9rem;
+  }
+  .py-1-9 {
+    padding-top: 1.9rem;
+  }
+  .mb-1-9{
+    margin-bottom: 1.9rem;
+  }
+  @media (min-width: 992px){
+    .d-lg-inline-block {
+      display: inline-block!important;
+    }
+  }
+  .rounded {
+    border-radius: 0.25rem!important;
+  }
+</style>

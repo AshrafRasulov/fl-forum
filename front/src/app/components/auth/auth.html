@@ -1,17 +1,4 @@
 <div class="d-flex flex-column h-100">
-  <mat-toolbar color="primary" class="d-flex justify-content-between">
-    <span>DL FORUM - Auth</span>
-    <div>
-      <button (click)="navigate('main',true)" matRipple class="btn-article">
-        <mat-icon>article</mat-icon>
-        <span class="px-2">Главная</span>
-      </button>
-      <button (click)="navigate('example', true)" matRipple class="btn-article">
-        <mat-icon>star</mat-icon>
-        <span class="px-2">Example</span>
-      </button>
-    </div>
-  </mat-toolbar>
   <div class="w-100 user-select-none flex-grow-1 d-flex justify-content-center align-items-center">
     <div [formGroup]="form" class="auth-card">
       <h5 class="text-center py-3 title">Авторизация</h5>

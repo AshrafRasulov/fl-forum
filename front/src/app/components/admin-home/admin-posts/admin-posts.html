@@ -1,0 +1,26 @@
+<div class="w-75 m-auto h-100 d-flex">
+  <div class="w-100 py-4 mx-2">
+    <table *ngIf="posts$ | async as info" class="w-100 table table-bordered">
+      <thead>
+      <tr>
+        <th class="text-center">ИД</th>
+        <th class="text-center">ЗАГОЛОВОК</th>
+        <th class="text-center">СТАТУС</th>
+        <th class="text-center">АВТОР</th>
+        <th class="text-center">ОТВЕТЫ</th>
+        <th class="text-center">ДЕЙСТВИЕ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of info; let i = index; trackBy: trackBy">
+        <td class="text-center">{{item.id}}</td>
+        <td class="text-left">{{item.title}}</td>
+        <td class="text-center">{{item.state === 'A' ? "Активный" : "Пассивный" }}</td>
+        <td class="text-center">{{item.author}}</td>
+        <td class="text-center">{{item.message_count}}</td>
+        <td class="text-center"><mat-checkbox (change)="setPostStatus(item)" [checked]="!(item.status == 0)"></mat-checkbox></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

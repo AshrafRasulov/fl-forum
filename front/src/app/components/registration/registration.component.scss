@@ -1,0 +1,134 @@
+.logo{
+  color: #fff;
+  font-weight: bold;
+}
+.header{
+  background: #0f498e;
+  height: 50px;
+}
+
+.btn-header{
+  background: #fff !important;
+  color: #0f498e;
+  font-weight: 500;
+}
+
+.text-page{
+  font-size: 30px;
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.mat-toolbar.mat-primary {
+  background: var(--primary) !important;
+  color: #fff;
+}
+
+
+
+
+.form-detail {
+  padding: 30px 80px 40px;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.form-detail .form-row {
+  width: 100%;
+  position: relative;
+}
+
+.form-detail .form-row label {
+  margin-top: 7px;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-detail input {
+  width: 100%;
+  padding: 5px 15px 10px 15px;
+  //border: 2px solid transparent;
+  border-bottom: 2px solid #918f8f;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #333;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.form-detail .form-row-last {
+  margin-top: 35px;
+}
+
+.form-detail .register {
+  background: #373be3;
+  -webkit-border-radius: 4px;
+  //-webkit-appearance: set;
+  outline: #000000 solid 1px;
+  //outline: none;
+  width: 180px;
+
+  margin: -13px 0 50px 0px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  float: left;
+}
+
+.form-detail .form-row-last{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-detail .form-row-last button{
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+
+.form-detail .form-row-last p {
+  font-weight: 600;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.form-detail .form-row-last a {
+  font-size: 16px;
+  color: #373be3;
+  padding-top: 6px;
+
+}
+.form-detail .form-check{
+  margin-top: 15px;
+  margin-left: 412px;
+  height: 50px;
+  position: relative;
+}
+
+.form-detail .form-check .form-check-input{
+  margin-top: 10px;
+  width: 27px;
+  height: 25px;
+  border: solid 1px #1d2124;
+  padding:0;
+}
+
+.form-detail .form-check .form-check-label{
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+

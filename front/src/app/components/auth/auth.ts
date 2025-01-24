@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {UtilService} from "../../services/util.service";
 
 @Component({
   selector: 'app-auth',
@@ -31,30 +32,32 @@ export class Auth implements OnDestroy{
   subs: Subscription = new Subscription();
 
   constructor(
-    private _http: HttpService,
-    private _route: Router,
+    private http: HttpService,
+    private route: Router,
+    private util: UtilService
   ) {
     localStorage.clear();
   }
 
   onReg(): void {
-    console.log('reg click')
+    this.route.navigate([`${'registration'}`]);
   }
 
   onLogin(): void {
     this.form.markAllAsTouched();
-    this.subs.add(this._http.post(this.form.getRawValue(), 'auth')
+    this.subs.add(this.http.post(this.form.getRawValue(), 'auth')
       .subscribe(s => {
         if (s.success) {
           localStorage.setItem('token', s.token);
           localStorage.setItem('user', JSON.stringify(s.user));
+          this.util.setAuthed(true);
           this.navigate('main', true)
-        } else this._http.errorMsg('Неверный логин или пароль');
+        } else this.http.errorMsg('Неверный логин или пароль');
       }))
   }
 
   navigate(url: string, replaceUrl: boolean = false): void{
-    this._route.navigate([`/${url}`], {replaceUrl: replaceUrl}).finally();
+    this.route.navigate([`/${url}`], {replaceUrl: replaceUrl}).finally();
   }
 
 

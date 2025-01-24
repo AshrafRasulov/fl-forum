@@ -1,0 +1,20 @@
+<div class="w-100 d-flex flex-column h-100">
+  <div class="flex-grow-1 user-select-none">
+    <mat-tab-group  selectedIndex="{{tab_index}}" class="w-100 h-100 overflow-hidden">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">border_color</mat-icon>
+          Пользователи
+        </ng-template>
+        <admin-users></admin-users>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">border_color</mat-icon>
+          Посты
+        </ng-template>
+        <admin-posts></admin-posts>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

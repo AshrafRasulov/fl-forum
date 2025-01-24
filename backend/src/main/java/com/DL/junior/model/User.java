@@ -23,6 +23,7 @@ public class User implements UserDetails {
   private String lastName;
   private String state;
   private String middleName;
+  private Short isAdmin;
   private Collection<String> roles = new ArrayList<>();
 
   @Override

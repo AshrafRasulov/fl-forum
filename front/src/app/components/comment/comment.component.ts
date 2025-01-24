@@ -39,14 +39,13 @@ constructor(private _router: Router, private _http: HttpService){}
 $info: Observable<any> = this.getInfo();
 
 ngOnInit() {
-  console.log('KutanBro');
   this.getInfo();
 }
 
 
 
 getInfo(): Observable<any>{
-  return this._http.post({}, )
+  return this._http.post({}, '');
 }
 
 }

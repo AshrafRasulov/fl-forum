@@ -1,0 +1,55 @@
+<div class="container">
+   <div class="row mb-3">
+     <button (click)="addPost()" matRipple class="btn-button-row">
+       <mat-icon>post_add</mat-icon>
+       <span class="px-2">Создать пост</span>
+     </button>
+   </div>
+
+  <div class="row">
+    <!---->
+    <div class="offset-md-1 col-md-10 offset-md-1" *ngIf="info$ | async as info">
+      <div class="post-content" *ngFor="let post of info">
+        <div class="post-container">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
+          <div class="post-detail">
+            <div class="user-info">
+              <h5>
+                <a [routerLink]="'/post/'+post.id" class="profile-link">{{ post.title }}</a>
+              </h5>
+              <p class="text-muted">Дата и время публикации: {{ post.cr_on }}</p>
+              <p class="text-muted">Автор: {{ post.author }}</p>
+            </div>
+            <div class="reaction">
+              <a class="btn text-green"><i class="fa fa-thumbs-up"></i> {{post.message_count}}</a>
+            </div>
+            <div class="line-divider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Okno -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input name="postComment" [formControl]="postComment" type="text" class="form-control"
+                   placeholder="Ответить" aria-label="answer" aria-describedby="addon-wrapping">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="postAnswerAdd()">Добавить
+            </button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="postAnswerEdit()">
+              Редактировать
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="postAnswerRemove()">Удалить
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

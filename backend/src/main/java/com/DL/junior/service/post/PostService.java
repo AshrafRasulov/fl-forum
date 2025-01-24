@@ -46,6 +46,8 @@ public class PostService {
         try {
             var jwt_user_id = Util.getUserId(req);
             data.addProperty("user_id", jwt_user_id);
+            //jwt ni nima qilaman manga passsword crypt kere. temi tur
+
             sql.callProcedure("Forum_Post.Delete_Post", data);
             Util.successMsg(res);
         }
@@ -60,6 +62,20 @@ public class PostService {
         JsonObject res = new JsonObject();
         try{
             res = sql.callFunction("Forum_Post.Get_Post", data);
+            Util.successMsg(res);
+        }
+        catch (Exception e){
+            Util.errorMsg(res, e.getMessage());
+        }
+        return ResponseEntity.ok(res.toString());
+    }
+
+    public ResponseEntity<String> setPostStatus(HttpServletRequest req, JsonObject data) {
+        var res = new JsonObject();
+        try{
+            var jwt_user_id = Util.getUserId(req);
+            data.addProperty("user_id", jwt_user_id);
+            sql.callProcedure("Forum_Post.Set_Post_State", data);
             Util.successMsg(res);
         }
         catch (Exception e){

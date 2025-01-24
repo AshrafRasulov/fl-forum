@@ -1,3 +1,53 @@
+<mat-toolbar color="primary" class="d-flex justify-content-between">
+  <span>ADMIN PAGE</span>
+  <div>
+    <button matRipple class="btn-article">
+      <mat-icon>article</mat-icon>
+      <span class="px-2">Главная</span>
+    </button>
+  </div>
+</mat-toolbar>
+<!--
 <div class="bg-danger text-white d-flex justify-content-center align-items-center w-100 h-100">
-  ADMIN PAGE
+  <div class="offset-4 col-4 offset-4" [formGroup]="adminForm">
+    <mat-form-field class="col" appearance="outline">
+      <mat-label>Имя пользователя</mat-label>
+      <input matInput type="text" class="input-text" formControlName="login">
+      <mat-error *ngIf="adminForm.controls['login'].hasError('required')">Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col" appearance="outline">
+      <mat-label>Пароль</mat-label>
+      <input type="password" matInput class="input-text" formControlName="password">
+      <mat-error *ngIf="adminForm.controls['middle_name'].hasError('required')">Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <div class="col d-flex justify-content-center align-items-center">
+      <button [disabled]="adminForm.invalid" class="btn btn-primary w-20" (click)="onLogin()">Вход</button>
+    </div>
+  </div>
+
+</div>
+-->
+
+<div class="p-5 bg-danger text-white d-flex w-100">
+  <div class="offset-4 col-4 offset-4" [formGroup]="adminForm">
+    <h1 *ngIf="false">{{!adminForm.invalid}}</h1>
+
+    <mat-form-field class="col" appearance="outline">
+      <mat-label>Имя пользователя</mat-label>
+      <input matInput type="text" class="input-text" formControlName="login">
+      <mat-error *ngIf="adminForm.controls['login'].hasError('required')">Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col" appearance="outline">
+      <mat-label>Парол</mat-label>
+      <input type="password" matInput class="input-text" formControlName="password">
+      <mat-error *ngIf="adminForm.controls['middle_name'].hasError('required')">Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <div class="col d-flex justify-content-center">
+      <button [disabled]="adminForm.invalid" class="btn btn-primary w-50" (click)="onLogin()">Вход</button>
+    </div>
+  </div>
 </div>

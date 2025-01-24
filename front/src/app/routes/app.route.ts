@@ -1,5 +1,4 @@
 import {Routes} from "@angular/router";
-import {Main} from '../components/main/main';
 import {AuthGuard} from "../guards/auth.guard";
 
 export const APP_ROUTES: Routes = [
@@ -8,16 +7,40 @@ export const APP_ROUTES: Routes = [
     loadComponent: () => import('../components/auth/auth').then(t => t.Auth)
   },
   {
+    path: 'admin',
+    loadComponent: () => import('../components/admin-home/admin-home.component').then(t => t.AdminHomeComponent)
+  },
+  {
+    path: 'registration',
+    loadComponent: () => import('../components/registration/registration.component').then(t => t.RegistrationComponent)
+  },
+  {
+    path: 'admin-home',
+    loadComponent: () => import('../components/admin-home/admin-home.component').then(t => t.AdminHomeComponent)
+  },
+  {
     path: 'example',
     loadComponent: () => import('../components/example/example').then(t => t.Example)
-  },{
+  },
+  {
     path: 'comment',
-    loadComponent: ()=> import('../components/comment/comment.component')
-    .then(t => t.CommentComponent)
+    loadComponent: () => import('../components/comment/comment.component')
+      .then(t => t.CommentComponent)
   },
   {
     path: 'post',
-    loadComponent: () => import('../components/post/post.component').then(t => t.PostComponent)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('../components/home/home').then(t => t.Home)
+  },
+  {
+    path: 'post/:id',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('../components/post/post').then(t => t.Post)
+  },
+  {
+    path: 'post/user/:id',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('../components/home/home').then(t => t.Home)
   },
   {
     path: 'admin',
@@ -26,8 +49,9 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'main',
-    component: Main
+    canActivate: [AuthGuard],
+    loadComponent: () => import('../components/home/home').then(t => t.Home)
   },
-  { path: '', redirectTo: 'main', pathMatch: 'full'},
-  { path: '**', redirectTo: 'main', pathMatch: 'full'},
+  {path: '', redirectTo: 'main', pathMatch: 'full'},
+  {path: '**', redirectTo: 'main', pathMatch: 'full'},
 ];

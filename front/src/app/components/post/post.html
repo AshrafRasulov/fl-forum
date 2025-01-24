@@ -1,0 +1,68 @@
+
+<!--<div class="w-100 d-flex flex-column mb-5">-->
+<!--  <mat-toolbar color="primary" class="d-flex justify-content-between">-->
+<!--    <span>DL FORUM - Example</span>-->
+<!--    <div>-->
+<!--      <button (click)="navigate('main',true)" matRipple class="btn-example mx-2">-->
+<!--        <mat-icon>home</mat-icon>-->
+<!--        <span class="px-2">Главная</span>-->
+<!--      </button>-->
+<!--      <button (click)="navigate('admin',true)" matRipple class="btn-example mr-2">-->
+<!--        <mat-icon>settings</mat-icon>-->
+<!--        <span class="px-2">Администрирование</span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </mat-toolbar>-->
+<!--</div>-->
+
+<div class="row" *ngIf="$post | async as post">
+  <div class="offset-1 col-10 offset-1">
+    <div class="postman">
+      <h5 class="dl-link" (click)="showUser(post.user_id)">{{ post.author }}</h5>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content }}</p>
+      <p class="date-stile float-right">{{ post.cr_on }}</p>
+    </div>
+  </div>
+  <div class="offset-1 col-10 offset-1">
+    <mat-divider></mat-divider>
+  </div>
+  <div class="offset-1 col-10 offset-1 mt-2">
+    <span>
+    <h5>Коментарии ({{post.comments?.length || 0}}) </h5>
+    </span>
+  </div>
+  <div class="offset-1 col-10 offset-1">
+    <div class="card w-100 mt-2" *ngFor="let message of post.comments">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{ message.cr_on }}</h6>
+        <p class="card-text">{{ message.content }}</p>
+        <strong><p class="dl-link" (click)="showUser(message.user_id)">{{ message.author }}</p></strong>
+      </div>
+    </div>
+  </div>
+  <div class="offset-1 col-10 offset-1">
+    <div [formGroup]="form">
+      <div>
+        <mat-form-field class="w-100 pt-5" appearance="outline">
+          <mat-label>Содержание</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+                    formControlName="content"
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="3"
+                    cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+      </div>
+    <button type="button" [disabled]="form.invalid" class="btn btn-primary float-right" (click)="addMessage()">Добавить</button>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .dl-link {
+    cursor:pointer;
+    color: blue; !important;
+  }
+</style>

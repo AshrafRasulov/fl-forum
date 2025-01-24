@@ -20,4 +20,9 @@ public class CAuth {
   public ResponseEntity<String> auth(@RequestBody String data) {
     return sAuth.authorization(JsonParser.toJsonObject(data));
   }
+
+  @PostMapping("register")
+  public ResponseEntity<String> register(@RequestBody String data){
+    return sAuth.register(JsonParser.toJsonObject(data));
+  }
 }

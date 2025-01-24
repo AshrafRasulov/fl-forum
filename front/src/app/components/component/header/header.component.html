@@ -1,0 +1,19 @@
+<div class="w-100 d-flex flex-column">
+  <mat-toolbar color="primary" class="d-flex justify-content-between">
+    <span>Форум Жан</span>
+    <div *ngIf="util.getAuthed() | async">
+      <button (click)="navigate('main',true)" matRipple class="btn-example mx-2">
+        <mat-icon>home</mat-icon>
+        <span class="px-2">Главная</span>
+      </button>
+      <button *ngIf="user.is_admin" (click)="navigate('admin',true)" matRipple class="btn-example mr-2">
+        <mat-icon>settings</mat-icon>
+        <span class="px-2">Администрирование</span>
+      </button>
+      <button (click)="logout()" matRipple class="btn-example mr-2">
+        <mat-icon>logout</mat-icon>
+        <span class="px-2">Выход</span>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
