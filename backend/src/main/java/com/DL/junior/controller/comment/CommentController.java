@@ -20,5 +20,9 @@ public class CommentController {
     public ResponseEntity<String> save(HttpServletRequest req, @RequestBody String data) {
         return commentService.save(req, JsonParser.toJsonObject(data));
     }
+    @PostMapping("delete")
+    public ResponseEntity<String> delete(HttpServletRequest req, @RequestBody String data) {
+        return commentService.delete(req, JsonParser.toJsonObject(data));
+    }
 
 }

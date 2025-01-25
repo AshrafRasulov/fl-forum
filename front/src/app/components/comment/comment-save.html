@@ -1,0 +1,18 @@
+<div class="justify-content-center p-4" [formGroup]="messageForm">
+  <mat-form-field class="d-flex justify-content-center pt-4" appearance="outline">
+    <mat-label>Содержание</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              formControlName="content"
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="3"
+              cdkAutosizeMaxRows="5">
+
+    </textarea>
+  </mat-form-field>
+  <div class="d-flex justify-content-center pt-4">
+    <button mat-raised-button color="primary" class="btn-example mr-2" (click)="submit()">Сохранить</button>
+    <button mat-stroked-button color="primary" class="btn-example mr-2" [mat-dialog-close]="false">Закрыть</button>
+  </div>
+
+</div>

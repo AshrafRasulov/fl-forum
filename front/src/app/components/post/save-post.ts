@@ -50,6 +50,7 @@ export class SavePost implements OnInit {
 
 
   postForm: FormGroup = new FormGroup({
+    id: new FormControl('', Validators.required),
     title: new FormControl('', Validators.required),
     content: new FormControl('', Validators.required),
     category: new FormControl('', Validators.required),

@@ -19,8 +19,14 @@
   <div class="offset-1 col-10 offset-1">
     <div class="postman">
       <h5 class="dl-link" (click)="showUser(post.user_id)">{{ post.author }}</h5>
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.content }}</p>
+      <h3 class="w-100 d-flex justify-content-between">{{ post.title }}
+        <span *ngIf="post.user_id == user.user_id">
+          <mat-icon style="cursor: pointer;" (click)="editPost()">edit_outline</mat-icon>
+          <mat-icon color="warn" style="cursor: pointer;" (click)="deletePost()">remove_circle_outline</mat-icon>
+        </span>
+      </h3>
+      <p>{{ post.content }}
+      </p>
       <p class="date-stile float-right">{{ post.cr_on }}</p>
     </div>
   </div>
@@ -36,7 +42,14 @@
     <div class="card w-100 mt-2" *ngFor="let message of post.comments">
       <div class="card-body">
         <h6 class="card-subtitle mb-2 text-muted">{{ message.cr_on }}</h6>
-        <p class="card-text">{{ message.content }}</p>
+        <p class="card-text w-100 d-flex justify-content-between">{{ message.content }}
+          <span *ngIf="message.user_id == user.user_id" class="p-2">
+            <mat-icon style="cursor: pointer;" (click)="editMessage(message)">edit_circle_outline</mat-icon>
+            <mat-icon style="cursor: pointer;" (click)="deleteMessage(message)">remove_circle_outline</mat-icon>
+          </span>
+        </p>
+
+
         <strong><p class="dl-link" (click)="showUser(message.user_id)">{{ message.author }}</p></strong>
       </div>
     </div>

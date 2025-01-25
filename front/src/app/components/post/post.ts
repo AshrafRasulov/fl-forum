@@ -11,13 +11,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {PostService} from "../../services/post.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {GetUser} from "../../services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {UserModalComponent} from "../user-modal/user-modal.component";
 import {MatListModule} from "@angular/material/list";
 import {UtilService} from "../../services/util.service";
 import {MessageService} from "../../services/message.service";
+import {SavePost} from "./save-post";
+import {EditMessage} from "../comment/comment-save";
 
 @Component({
   selector: 'app-post',
@@ -59,7 +61,7 @@ export class Post implements OnInit {
     private router: Router,
     private modal: MatDialog,
     public util: UtilService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {
 
   }
@@ -92,10 +94,6 @@ export class Post implements OnInit {
     );
     m.componentInstance.dialog = m;
     m.componentInstance.userId = id;
-
-    m.afterClosed().subscribe(d => {
-      console.log(d);
-    });
   }
 
   addMessage() {
@@ -110,5 +108,54 @@ export class Post implements OnInit {
 
     });
 
+  }
+
+  editPost() {
+    const m = this.modal.open(
+      SavePost,
+      {width: '900px', height: '580px'}
+    );
+    m.componentInstance.dialog = m;
+    this.$post.subscribe(p=> {
+      m.componentInstance.postForm.patchValue({...p, category: p.category_id})
+    });
+    m.afterClosed().subscribe(d => {
+      console.log(d);
+      if (d) this.getPost();
+    });
+  }
+
+  editMessage(message) {
+    const m = this.modal.open(
+      EditMessage,
+      {width: '500px'}
+    );
+    m.componentInstance.dialog = m;
+    m.componentInstance.messageForm.patchValue({...message, id: message.comment_id});
+    m.afterClosed().subscribe(saved => {if(saved) this.getPost()});
+  }
+
+  deletePost() {
+    this.$post.subscribe(p => {
+      this.service.deletePost(p.id).subscribe((res: any) =>
+      {
+        if (res.success) {
+          this.util.successMsg('Успешно сохранено', 4000);
+        }
+        else this.util.errorMsg(res.msg);
+      });
+    })
+  }
+
+  deleteMessage(message) {
+    console.log(message);
+    this.messageService.deleteMessage(message.comment_id).subscribe((res: any) =>
+    {
+      if (res.success) {
+        this.util.successMsg('Успешно сохранено', 4000);
+        this.getPost();
+      }
+      else this.util.errorMsg(res.msg);
+    });
   }
 }

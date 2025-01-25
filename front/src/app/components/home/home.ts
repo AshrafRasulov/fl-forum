@@ -65,6 +65,7 @@ export class Home implements OnInit {
   getInfo(): Observable<any> {
     return this.service.getPosts().pipe(map(m => {
       if (m.success) {
+        console.log(m);
         return m.obj.filter(p=> p.status == 1);
       } else {
         this.util.errorMsg(m.msg);

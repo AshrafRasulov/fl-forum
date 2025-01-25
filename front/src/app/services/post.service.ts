@@ -33,7 +33,7 @@ export class PostService {
   }
 
   deletePost(id: number): Observable<any>{
-    return this.http.post({}, `post/delete/${id}`)
+    return this.http.post({id}, `post/delete`)
   }
 
 }
