@@ -33,11 +33,9 @@ export class AppComponent implements OnInit {
   constructor(
     public util: UtilService
   ) {
-    this.util.getAuthed().subscribe(a=> console.log(a));
   }
 
   ngOnInit(){
-    console.log(this.user);
     this.setAuthedFromSession();
   }
 

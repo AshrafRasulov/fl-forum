@@ -79,7 +79,6 @@ export class Post implements OnInit {
     this.$post = this.service.getPostById(this.postId);
   }
 
-
   navigate(url: string, replaceUrl: boolean): void {
     this.router.navigate([`/${url}`], {replaceUrl: replaceUrl}).finally();
   }
@@ -120,7 +119,6 @@ export class Post implements OnInit {
       m.componentInstance.postForm.patchValue({...p, category: p.category_id})
     });
     m.afterClosed().subscribe(d => {
-      console.log(d);
       if (d) this.getPost();
     });
   }
@@ -140,7 +138,8 @@ export class Post implements OnInit {
       this.service.deletePost(p.id).subscribe((res: any) =>
       {
         if (res.success) {
-          this.util.successMsg('Успешно сохранено', 4000);
+          this.util.successMsg('Успешно удалено', 4000);
+          this.router.navigate([`/`]).finally();
         }
         else this.util.errorMsg(res.msg);
       });
@@ -148,7 +147,6 @@ export class Post implements OnInit {
   }
 
   deleteMessage(message) {
-    console.log(message);
     this.messageService.deleteMessage(message.comment_id).subscribe((res: any) =>
     {
       if (res.success) {

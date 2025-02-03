@@ -9,19 +9,21 @@ import {Subscription} from 'rxjs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {UtilService} from "../../services/util.service";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.html',
   styleUrls: ['./auth.scss'],
-  imports: [
-    MatRippleModule,
-    MatTooltipModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatToolbarModule,
-    MatButtonModule
-  ],
+    imports: [
+        MatRippleModule,
+        MatTooltipModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule
+    ],
   standalone: true
 })
 export class Auth implements OnDestroy{
@@ -57,7 +59,7 @@ export class Auth implements OnDestroy{
   }
 
   navigate(url: string, replaceUrl: boolean = false): void{
-    this.route.navigate([`/${url}`], {replaceUrl: replaceUrl}).finally();
+    this.route.navigate([`/${url}`], {replaceUrl: replaceUrl}).finally(() => {});
   }
 
 

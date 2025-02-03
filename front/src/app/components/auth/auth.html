@@ -5,13 +5,13 @@
       <div class="px-4">
         <div class="auth-label">Логин</div>
         <div class="auth-input" [class.error]="form.get('login')?.touched && form.get('login')?.hasError('required')">
-          <input formControlName="login">
+          <input formControlName="login" maxlength="50">
         </div>
       </div>
       <div class="px-4 mb-3">
         <div class="auth-label">Пароль</div>
         <div class="auth-input" [class.error]="form.get('password')?.touched &&form.get('password')?.hasError('required')">
-          <input (keydown.enter)="btn.click()" formControlName="password" type="password">
+          <input (keydown.enter)="btn.click()" formControlName="password" type="password"  maxlength="50">
         </div>
       </div>
       <div class="px-4 mb-2">

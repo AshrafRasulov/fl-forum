@@ -10,7 +10,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 
 import {MatButtonModule} from "@angular/material/button";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {AsyncPipe, NgForOf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {PostService} from "../../services/post.service";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSelectModule} from "@angular/material/select";
@@ -38,7 +38,8 @@ import {HttpService} from "../../services/http.service";
     NgForOf,
     MatDialogModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    NgIf
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -50,7 +51,7 @@ export class SavePost implements OnInit {
 
 
   postForm: FormGroup = new FormGroup({
-    id: new FormControl('', Validators.required),
+    id: new FormControl(0, Validators.required),
     title: new FormControl('', Validators.required),
     content: new FormControl('', Validators.required),
     category: new FormControl('', Validators.required),

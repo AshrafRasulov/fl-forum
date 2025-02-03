@@ -45,7 +45,7 @@ public class CommentService {
         try{
             var jwt_user_id = Util.getUserId(req);
             data.addProperty("user_id", jwt_user_id);
-            sql.callProcedure("Forum_Message.Delete_Message", data);
+            sql.callProcedure("Forum_Message.Delete_Message_From_API", data);
             Util.successMsg(res);
         }
         catch(Exception e){

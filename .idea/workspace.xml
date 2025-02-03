@@ -4,18 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10dc745-9c24-4c9b-80bb-724b152916c4" name="Changes" comment="add-admin-page">
-      <change afterPath="$PROJECT_DIR$/front/src/app/components/comment/comment-save.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/app/components/comment/comment-save.ts" afterDir="false" />
+    <list default="true" id="b10dc745-9c24-4c9b-80bb-724b152916c4" name="Changes" comment="add edit and delete buttons on posts and comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/controller/comment/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/controller/comment/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/comment/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/comment/CommentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/post/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/post/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/user/SUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/DL/junior/service/user/SUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-users/admin-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-users/admin-users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-users/admin-users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/admin-home/admin-users/admin-users.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/auth/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/auth/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/component/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/component/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/component/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/component/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/home/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/home/home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/components/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/home/home.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/components/post/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/post/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/components/post/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/post/post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/post/save-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/post/save-post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/app/components/post/save-post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/post/save-post.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/services/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/services/message.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/services/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/services/post.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/registration/registration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/registration/registration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/user-modal/user-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/components/user-modal/user-modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/services/admin.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/services/admin.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,40 +73,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.Angular Application.executor": "Debug",
-    "Maven.junior [clean].executor": "Run",
-    "Maven.junior [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.backend.executor": "Debug",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "d6ddf752",
-    "jdk.selected.JAVA_MODULE": "corretto-21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/projects/forum/front/src/app/components/comment",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI Server.executor": "Debug",
-    "onboarding.tips.debug.path": "C:/Users/ASHEE-PC/Desktop/News Site/BegiOrder/junior/untitled1/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.34827587",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "ts.external.directory.path": "D:\\projects\\forum\\front\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Angular Application.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.junior [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.junior [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.backend.executor&quot;: &quot;Debug&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/forum/front/src/app/components/comment&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Debug&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ASHEE-PC/Desktop/News Site/BegiOrder/junior/untitled1/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.34827587&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\projects\\forum\\front\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\forum\front\src\app\components\comment" />
@@ -103,7 +118,7 @@
       <recent name="D:\projects\forum\front\src\app\services" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.backend">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="junior" />
       <method v="2">
@@ -170,7 +185,13 @@
       <workItem from="1737558100058" duration="7411000" />
       <workItem from="1737618381534" duration="17405000" />
       <workItem from="1737719643264" duration="16164000" />
-      <workItem from="1737802735662" duration="5684000" />
+      <workItem from="1737802735662" duration="5841000" />
+      <workItem from="1738061510865" duration="1955000" />
+      <workItem from="1738069523524" duration="5345000" />
+      <workItem from="1738325552026" duration="15131000" />
+      <workItem from="1738426899944" duration="1488000" />
+      <workItem from="1738552713292" duration="6442000" />
+      <workItem from="1738599663021" duration="4083000" />
     </task>
     <task id="LOCAL-00001" summary="add-admin-page">
       <option name="closed" value="true" />
@@ -180,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737739707162</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add edit and delete buttons on posts and comments">
+      <option name="closed" value="true" />
+      <created>1737808629663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737808629663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +231,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="prem-preparation" />
     <MESSAGE value="add-admin-page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add-admin-page" />
+    <MESSAGE value="add edit and delete buttons on posts and comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add edit and delete buttons on posts and comments" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
   <component name="XDebuggerManager">

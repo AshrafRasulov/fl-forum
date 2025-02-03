@@ -26,4 +26,8 @@ export class AdminService {
   setPostState(data){
     return this.http.post(data, 'post/set_post_status');
   }
+
+  userDelete(data){
+    return this.http.post(data, 'user/delete_user_by_id');
+  }
 }

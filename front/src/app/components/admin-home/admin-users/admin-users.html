@@ -20,9 +20,21 @@
         <td class="text-center">{{item.is_admin == 1 ? "Да" : "Нет"}}</td>
         <td class="text-center">{{item.post_count}}</td>
         <td class="text-center">{{item.message_count}}</td>
-        <td class="text-center"><mat-checkbox (change)="setUserStatus(item)" [checked]="!(item.state == 0)"></mat-checkbox></td>
+        <td class="text-center" *ngIf="!(item.is_admin)">
+          <mat-icon class="trash" (click)="userDelete(item)">delete</mat-icon>
+        </td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+<style>
+  .trash{
+    cursor: pointer;
+  }
+
+  .trash:hover{
+    color: #bd2130;
+  }
+</style>

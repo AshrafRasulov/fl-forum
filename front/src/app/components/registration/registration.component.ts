@@ -52,13 +52,13 @@ export class RegistrationComponent {
   }
 
   registrForm = new FormGroup({
-      login: new FormControl('login', [Validators.required]),
-      first_name: new FormControl('first_name', [Validators.required]),
-      last_name: new FormControl('last_name', [Validators.required]),
-      middle_name: new FormControl('middle_name', [Validators.required]),
-      email: new FormControl('email@email.com', [Validators.required]),
-      password: new FormControl('password', [Validators.required]),
-      confirm: new FormControl('confirm', [Validators.required]),
+      login: new FormControl('', [Validators.required]),
+      first_name: new FormControl('', [Validators.required]),
+      last_name: new FormControl('', [Validators.required]),
+      middle_name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      confirm: new FormControl('', [Validators.required]),
     }
   );
 
@@ -66,12 +66,13 @@ export class RegistrationComponent {
   register() {
     let formValue = this.registrForm.getRawValue();
     if (this.registrForm.controls['password'].value !== this.registrForm.controls['confirm'].value) {
-      console.log("Пароли не совпадают");
+      alert("Пароли не совпадают");
+      return;
     }
     this.registrationService.saveUser(formValue).subscribe((res: any) => {
       if (res.success) {
         this.util.successMsg('Успешно Добавлено', 4000);
-        this.router.navigate(['/auth']);
+        this.router.navigate(['/auth']).finally();
       } else this.util.errorMsg(res.msg);
     });
 

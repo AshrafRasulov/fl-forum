@@ -22,6 +22,7 @@ public class CommentController {
     }
     @PostMapping("delete")
     public ResponseEntity<String> delete(HttpServletRequest req, @RequestBody String data) {
+//        System.out.println(data);
         return commentService.delete(req, JsonParser.toJsonObject(data));
     }
 

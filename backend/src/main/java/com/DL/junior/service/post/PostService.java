@@ -46,7 +46,7 @@ public class PostService {
         try {
             var jwt_user_id = Util.getUserId(req);
             data.addProperty("user_id", jwt_user_id);
-            sql.callProcedure("Forum_Post.Delete_Post", data);
+            sql.callProcedure("Forum_Post.Delete_Post_From_API", data);
             Util.successMsg(res);
         }
         catch(Exception e){

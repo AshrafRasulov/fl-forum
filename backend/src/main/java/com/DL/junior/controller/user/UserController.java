@@ -36,4 +36,9 @@ public class UserController {
         return userService.setUserStatus(req, JsonParser.toJsonObject(data));
     }
 
+    @PostMapping("delete_user_by_id")
+    public ResponseEntity<String> deleteUserById(HttpServletRequest req, @RequestBody String data){
+        return userService.deleteUserById(req, JsonParser.toJsonObject(data));
+    }
+
 }

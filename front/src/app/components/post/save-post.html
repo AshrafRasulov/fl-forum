@@ -4,17 +4,22 @@
   <mat-form-field appearance="outline" class="fill-container w-100" style="margin-top: 10px;">
     <mat-label>Заголовок</mat-label>
     <input matInput maxlength="255"
-           formControlName="title">
+           formControlName="title"
+           [maxLength]="300">
+    <mat-error *ngIf="postForm.controls['title'].hasError('required')">Обязательное поле</mat-error>
+
   </mat-form-field>
 
   <mat-form-field class="w-100" appearance="outline">
     <mat-label>Содержание</mat-label>
     <textarea matInput
+              [maxLength]="1000"
               cdkTextareaAutosize
               formControlName="content"
               #autosize="cdkTextareaAutosize"
               cdkAutosizeMinRows="1"
               cdkAutosizeMaxRows="5"></textarea>
+    <mat-error *ngIf="postForm.controls['content'].hasError('required')">Обязательное поле</mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline" class="w-100">
     <mat-label>Категория</mat-label>
@@ -22,10 +27,11 @@
       <mat-option *ngFor="let category of (categories$ | async)" [value]="category.id">
         {{ category.name }}</mat-option>
     </mat-select>
+    <mat-error *ngIf="postForm.controls['category'].hasError('required')">Обязательное поле</mat-error>
   </mat-form-field>
 </div>
 <div class="d-flex justify-content-center pt-4">
-  <button mat-raised-button color="primary" class="btn-example mr-2" (click)="submit()">Добавить</button>
+  <button mat-raised-button color="primary" class="btn-example mr-2" (click)="submit()" [disabled]="postForm.invalid">Добавить</button>
   <button mat-stroked-button color="primary" class="btn-example mr-2" [mat-dialog-close]="false">Закрыть</button>
 </div>
 

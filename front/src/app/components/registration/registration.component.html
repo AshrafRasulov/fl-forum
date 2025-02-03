@@ -4,43 +4,44 @@
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Имя пользователя</mat-label>
-      <input matInput type="text" class="input-text" formControlName="login">
+      <input matInput type="text" class="input-text" formControlName="login" maxlength="50">
       <mat-error *ngIf="registrForm.controls['login'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Фамилия</mat-label>
-      <input matInput type="text" class="input-text" formControlName="last_name">
+      <input matInput type="text" class="input-text" formControlName="last_name" maxlength="55">
       <mat-error *ngIf="registrForm.controls['last_name'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Имя</mat-label>
-      <input matInput type="text" class="input-text" formControlName="first_name">
+      <input matInput type="text" class="input-text" formControlName="first_name" maxlength="50">
       <mat-error *ngIf="registrForm.controls['first_name'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Отчество</mat-label>
-      <input matInput type="text" class="input-text" formControlName="middle_name">
+      <input matInput type="text" class="input-text" formControlName="middle_name" maxlength="55">
       <mat-error *ngIf="registrForm.controls['middle_name'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>E-Mail</mat-label>
-      <input matInput type="text" autocomplete="off" class="input-text" formControlName="email" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+      <input matInput type="text" autocomplete="off" class="input-text"
+             formControlName="email" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" maxlength="50">
       <mat-error *ngIf="registrForm.controls['email'].hasError('required')">Не пизди!!! Как связатса потом?</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Парол</mat-label>
-      <input type="password" matInput class="input-text" formControlName="password">
+      <input type="password" matInput class="input-text" formControlName="password" maxlength="50">
       <mat-error *ngIf="registrForm.controls['middle_name'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Подтверждение пароля</mat-label>
-      <input matInput type="password" class="input-text" formControlName="confirm">
+      <input matInput type="password" class="input-text" formControlName="confirm" maxlength="50">
       <mat-error *ngIf="registrForm.controls['confirm'].hasError('required')">Обязательное поле</mat-error>
     </mat-form-field>
 

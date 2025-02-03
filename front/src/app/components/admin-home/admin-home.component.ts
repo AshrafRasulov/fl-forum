@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from "@angular/material/button";
 import {MatDatepickerModule} from "@angular/material/datepicker";
@@ -9,8 +9,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatRippleModule} from "@angular/material/core";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {map, Observable} from "rxjs";
+import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpService} from "../../services/http.service";
 import {MatCheckboxModule} from "@angular/material/checkbox";
